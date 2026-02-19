@@ -1,59 +1,37 @@
-# ApiSeries
+# 📺 API Series - Angular SPA
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.1.4.
+Este proyecto es una aplicación de página única (SPA) desarrollada en **Angular** para la gestión de series de TV. Consume una API REST externa para listar contenidos y permite el registro de nuevas series mediante formularios reactivos.
 
-## Development server
+## 🚀 Características
 
-To start a local development server, run:
+- **Listado de Series**: Consumo de API externa mediante servicios y Observables (GET).
+- **Formulario Reactivo**: Sistema de alta de series con validaciones personalizadas (POST).
+- **Navegación**: Sistema de rutas dinámicas con `Angular Router`.
+- **Diseño**: Interfaz moderna utilizando **Bootstrap** y **ng-bootstrap**.
+- **Arquitectura**: Separación estricta de responsabilidades (Layout, Pages, Services).
 
-```bash
-ng serve
+## 🛠️ Tecnologías utilizadas
+
+- [Angular](https://angular.io/) (v17+)
+- [Bootstrap](https://getbootstrap.com/) & [ng-bootstrap](https://ng-bootstrap.github.io/)
+- [RxJS](https://rxjs.dev/) para el manejo de flujos asíncronos.
+- [HttpClient](https://angular.io/guide/http) para el consumo de API REST.
+
+## 📂 Estructura del Proyecto
+
+Siguiendo los requisitos de la actividad, el proyecto se organiza de la siguiente forma:
+
+```text
+src/app/
+├── components/
+│   └── layout/
+│       ├── header/        # Barra de navegación con routerLink
+│       └── footer/        # Información institucional y del alumno
+├── pages/
+│   ├── home/              # Página principal: Listado de series (GET)
+│   └── new/               # Página de alta: Formulario reactivo (POST)
+├── services/
+│   └── series.service.ts  # Lógica de comunicación con la API (HttpClient)
+├── app.routes.ts          # Configuración de rutas (/home, /new)
+└── app.component.html     # Estructura común (Header + Router + Footer)
 ```
-
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
