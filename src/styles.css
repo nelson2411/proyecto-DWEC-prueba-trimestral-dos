@@ -1,1 +1,25 @@
 /* You can add global styles to this file, and also import other style files */
+/* Asegura que el body ocupe toda la pantalla para el footer */
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+/* El componente principal crecerá para empujar al footer abajo */
+app-root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Estilo para los enlaces activos en el menú */
+.nav-link.active {
+  color: #fff !important;
+  font-weight: bold;
+  border-bottom: 2px solid #0d6efd;
+}

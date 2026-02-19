@@ -1,0 +1,65 @@
+<div class="row justify-content-center">
+  <div class="col-md-8 col-lg-6">
+    <div class="card shadow border-0">
+      <div class="card-header bg-success text-white py-3">
+        <h3 class="card-title mb-0">Dar de Alta Nueva Serie</h3>
+      </div>
+      <div class="card-body p-4">
+        <form [formGroup]="seriesForm" (ngSubmit)="onSubmit()">
+          <div class="mb-3">
+            <label class="form-label fw-bold">Título de la Serie</label>
+            <input
+              type="text"
+              class="form-control"
+              formControlName="title"
+              [class.is-invalid]="
+                seriesForm.get('title')?.invalid && seriesForm.get('title')?.touched
+              "
+              placeholder="Ej: Breaking Bad"
+            />
+            <div class="invalid-feedback">
+              El título es obligatorio y debe tener al menos 3 caracteres.
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label fw-bold">Canal o Plataforma</label>
+            <input
+              type="text"
+              class="form-control"
+              formControlName="channel"
+              [class.is-invalid]="
+                seriesForm.get('channel')?.invalid && seriesForm.get('channel')?.touched
+              "
+              placeholder="Ej: Netflix, HBO, AMC"
+            />
+            <div class="invalid-feedback">Debes indicar el canal de emisión.</div>
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label fw-bold">Puntuación (Rating)</label>
+            <input
+              type="number"
+              class="form-control"
+              formControlName="rating"
+              [class.is-invalid]="
+                seriesForm.get('rating')?.invalid && seriesForm.get('rating')?.touched
+              "
+              placeholder="Valor de 0 a 10"
+            />
+            <div class="invalid-feedback">La puntuación debe estar entre 0 y 10.</div>
+          </div>
+
+          <div class="d-grid gap-2 mt-4">
+            <button type="submit" class="btn btn-success btn-lg" [disabled]="seriesForm.invalid">
+              <i class="bi bi-cloud-arrow-up me-2"></i>Registrar Serie
+            </button>
+            <button type="button" class="btn btn-outline-secondary" routerLink="/home">
+              Cancelar
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
